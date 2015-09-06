@@ -12,29 +12,43 @@ Assets
 ------
 
 * PII
+
   * Credit card data
   * Real name
   * Address
+  
 * User data
+
   * Username
   * Password
   * Public user info
+  
     * About me
+    
 * Authentication tokens
 * Posts
+
   * Anonymous (still has user data attached to it)
   * Non-anonymous
 
-## Roles
+
+Roles
+-----
+
 * Admin
+
   * Can create, read, update, and delete all PII, user data, and posts
-* Users - 
+  
+* Users
+
   * Can create, read, and update their own PII and user data
   * Can create and read anonymous and non-anonymous posts 
   * Can read public user data and all posts.
+  
 * Anonymous
+
   * Can read all posts
 
-### Access Control Matrix
-
+Access Control Matrix
+---------------------
 
