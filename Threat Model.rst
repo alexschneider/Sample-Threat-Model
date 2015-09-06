@@ -39,7 +39,7 @@ Roles
 
   * Can create, read, update, and delete all PII, user data, and posts
   
-* Users
+* User
 
   * Can create, read, and update their own PII and user data
   * Can create and read anonymous and non-anonymous posts 
@@ -52,3 +52,32 @@ Roles
 Access Control Matrix
 ---------------------
 
++---------+---------+---------------------------------------------------+
+|Role     |Operation|Assets                                             |
++=========+=========+===================================================+
+|         |         |PII      |User Data|Authentication Tokens|Posts    |
++---------+---------+---------+---------+---------------------+---------+
+|Anonymous|Create   |Never    |Never    |Never                |Never    |
+|         +---------+---------+---------+---------------------+---------+
+|         |Read     |Never    |Sometimes|Never                |Always   |
+|         +---------+---------+---------+---------------------+---------+
+|         |Update   |Never    |Never    |Never                |Never    |
+|         +---------+---------+---------+---------------------+---------+
+|         |Delete   |Never    |Never    |Never                |Never    |
++---------+---------+---------+---------+---------------------+---------+
+|User     |Create   |Always   |Always   |Never                |Always   |
+|         +---------+---------+---------+---------------------+---------+
+|         |Read     |Sometimes|Sometimes|Sometimes            |Always   |
+|         +---------+---------+---------+---------------------+---------+
+|         |Update   |Sometimes|Sometimes|Never                |Sometimes|
+|         +---------+---------+---------+---------------------+---------+
+|         |Delete   |Never    |Never    |Never                |Never    |
++---------+---------+---------+---------+---------------------+---------+
+|Admin    |Create   |Always   |Always   |Never                |Always   |
+|         +---------+---------+---------+---------------------+---------+
+|         |Read     |Always   |Always   |Always               |Always   |
+|         +---------+---------+---------+---------------------+---------+
+|         |Update   |Always   |Always   |Never                |Always   |
+|         +---------+---------+---------+---------------------+---------+
+|         |Delete   |Always   |Always   |Never                |Always   |
++---------+---------+---------+---------+---------------------+---------+
