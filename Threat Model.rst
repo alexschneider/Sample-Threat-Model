@@ -55,7 +55,7 @@ Access Control Matrix
 +---------+---------+---------------------------------------------------+
 |Role     |Operation|Assets                                             |
 +=========+=========+=========+=========+=====================+=========+
-|         |         |PII      |User Data|Authentication Tokens|Posts    |
+|                   |PII      |User Data|Authentication Tokens|Posts    |
 +---------+---------+---------+---------+---------------------+---------+
 |Anonymous|Create   |Never    |Never    |Never                |Never    |
 |         +---------+---------+---------+---------------------+---------+
