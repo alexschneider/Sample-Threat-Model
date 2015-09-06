@@ -57,7 +57,7 @@ Access Control Matrix
 |             |         +---------+---------+---------------------+---------+
 |             |         |PII      |User Data|Authentication Tokens|Posts    |
 +=============+=========+=========+=========+=====================+=========+
-|**Anonymous**|Create   |Never    |Never    |Never                |Never    |
+|*Anonymous*  |Create   |Never    |Never    |Never                |Never    |
 |             +---------+---------+---------+---------------------+---------+
 |             |Read     |Never    |Sometimes|Never                |Always   |
 |             +---------+---------+---------+---------------------+---------+
@@ -65,7 +65,7 @@ Access Control Matrix
 |             +---------+---------+---------+---------------------+---------+
 |             |Delete   |Never    |Never    |Never                |Never    |
 +-------------+---------+---------+---------+---------------------+---------+
-|**User**     |Create   |Always   |Always   |Never                |Always   |
+|*User*       |Create   |Always   |Always   |Never                |Always   |
 |             +---------+---------+---------+---------------------+---------+
 |             |Read     |Sometimes|Sometimes|Sometimes            |Always   |
 |             +---------+---------+---------+---------------------+---------+
@@ -73,7 +73,7 @@ Access Control Matrix
 |             +---------+---------+---------+---------------------+---------+
 |             |Delete   |Never    |Never    |Never                |Never    |
 +-------------+---------+---------+---------+---------------------+---------+
-|**Admin**    |Create   |Always   |Always   |Never                |Always   |
+|*Admin*      |Create   |Always   |Always   |Never                |Always   |
 |             +---------+---------+---------+---------------------+---------+
 |             |Read     |Always   |Always   |Always               |Always   |
 |             +---------+---------+---------+---------------------+---------+
