@@ -26,7 +26,7 @@ Assets
     * About me
     * User roles
 
-* Authentication tokens
+* Session
 * Posts
 
   * Anonymous (still has user data attached to it)
@@ -36,11 +36,13 @@ Assets
 Roles
 -----
 
-* Admin
+* Admin - Someone who has the capability to change or delete user accounts and
+  posts without incurring the fee
 
   * Can create, read, update, and delete all PII, user data, and posts
 
-* User
+* User - Someone who has registered and has a public profile - can make
+  anonymous or non-anonymous posts on other public profiles
 
   * Can create, read, and update their own PII and user data
   * Can create and read anonymous and non-anonymous posts
@@ -56,7 +58,7 @@ Access Control Matrix
 +-------------+---------+---------------------------------------------------+
 |*Role*       |Operation|Assets                                             |
 |             |         +---------+---------+---------------------+---------+
-|             |         |PII      |User Data|Authentication Tokens|Posts    |
+|             |         |PII      |User Data|Session   Tokens     |Posts    |
 +=============+=========+=========+=========+=====================+=========+
 |**Anonymous**|*Create* |Never    |Never    |Never                |Never    |
 |             +---------+---------+---------+---------------------+---------+
@@ -76,7 +78,7 @@ Access Control Matrix
 +-------------+---------+---------+---------+---------------------+---------+
 |**Admin**    |*Create* |Always   |Always   |Never                |Always   |
 |             +---------+---------+---------+---------------------+---------+
-|             |*Read*   |Always   |Always   |Always               |Always   |
+|             |*Read*   |Always   |Always   |Sometimes            |Always   |
 |             +---------+---------+---------+---------------------+---------+
 |             |*Update* |Always   |Always   |Never                |Always   |
 |             +---------+---------+---------+---------------------+---------+
@@ -98,14 +100,13 @@ Potential Attackers
 This application is most likely to be attacked by script kiddies or activist hackers,
 given the nature of the application. Due to the storage of credit card data,
 it is possible that the website may be attacked by organized crime attackers,
-but it is unlikely to be the target of governmental forces since it contains no
-subversion efforts.
+but it is unlikely to be the target of governmental forces.
 
 Priority 1
 ~~~~~~~~~~
 #. An attacker can Create, Read, Update, or Delete PII
 #. An attacker can Create, Read, Update, or Delete User Data
-#. An attacker can Create, Read, Update, or Delete Authentication Tokens
+#. An attacker can Create, Read, Update, or Delete Session Tokens
 #. An attacker can Create, Read, Update, or Delete Posts
 #. An attacker can gain unauthorized access to the filesystem contents
 #. An attacker can gain unauthorized code execution on the machine
@@ -175,6 +176,7 @@ Vulnerabilities and Countermeasures
     storage
   * When serializing data to send to a client, ensure that the serialized data
     doesn't contain any data not directly needed at the time of the response
+  * Ensure that all debugging features are turned off at release time
 
 * An attacker can access application functionality they don't have access to (A7)
 
