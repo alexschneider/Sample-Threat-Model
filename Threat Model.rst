@@ -18,14 +18,17 @@ Assets
   * Address
 
 * User data
+
   * Username
   * Password
   * Public user info
+
     * About me
     * User roles
 
 * Authentication tokens
 * Posts
+
   * Anonymous (still has user data attached to it)
   * Non-anonymous
 
@@ -34,14 +37,17 @@ Roles
 -----
 
 * Admin
+
   * Can create, read, update, and delete all PII, user data, and posts
 
 * User
+
   * Can create, read, and update their own PII and user data
   * Can create and read anonymous and non-anonymous posts
   * Can read public user data and all posts.
 
 * Anonymous
+
   * Can read all posts
 
 Access Control Matrix
@@ -114,6 +120,7 @@ Vulnerabilities and Countermeasures
 * Because the application is using a SQL database, an attacker can use SQL
   injection to Create, Read, Update, or Delete data. Alternatively, an attacker
   can cause unintended behavior by crafted XML or JSON (A1)
+
   * Use parameterized queries or prepared statements whenever using SQL queries,
     even if it is not obvious that it takes user input
   * Ensure that deserializers can safely handle untrusted data
@@ -130,6 +137,7 @@ Vulnerabilities and Countermeasures
     the passwords are salted and hashed using a secure algorithm
 
 * The application allows for Cross Site Scripting (A3)
+
   * Ensure that any user input that may be reflected (either from a form or in
     a query parameter) is escaped or checked against a whitelist of acceptable
     characters
@@ -137,12 +145,14 @@ Vulnerabilities and Countermeasures
 
 * The application allows insecure direct object references (i.e. look up
   information by account number) (A4)
+
   * Use indirect object references and perform a 1-1 mapping on the application
     side
   * If direct references must be used, verify the user making the request has
     authorization to access the resource
 
 * The security is misconfigured on the server or in the application (A5)
+
   * Ensure the operating system and all components of the application (libraries,
     databases) are updated fully
   * Ensure unnecessary features (admin consoles, accounts, directory listing,
@@ -153,6 +163,7 @@ Vulnerabilities and Countermeasures
   * Ensure all security features of frameworks used are enabled
 
 * The application exposes sensitive data to attackers (A6)
+
   * Ensure that the application uses TLS and strong cipher suites only
   * Make sure cookies are set to Secure and if possible HttpOnly
   * Use HSTS_ and `Certificate Pinning`_ if possible
@@ -166,12 +177,14 @@ Vulnerabilities and Countermeasures
     doesn't contain any data not directly needed at the time of the response
 
 * An attacker can access application functionality they don't have access to (A7)
+
   * Make sure that all authenticated endpoints verify authentication for all
     functionality. For example, use middleware to ensure requests made to
     handlers for administrative pages or user pages have the requisit level
     required
 
 * An attacker can execute a `Cross Site Request Forgery (CSRF)`_ attack (A8)
+
   * Use CSRF `synchronizer token`_ (preferably at the double submit cookies and
     the encrypted token patterns)
   * Check the referrer header to make sure it makes sense (this is difficult to
@@ -180,6 +193,7 @@ Vulnerabilities and Countermeasures
     sensitive in nature (i.e. re-entering passwords, entering a captcha, etc)
 
 * The application uses components that have known vulnerabilities (A9)
+
   * Prior to using any third party components, verify that the current versions
     don't show up on the `CVE list`_ or the `National Vulnerability Database`_
   * Make sure that all libraries and applications used on the server are updated
@@ -187,12 +201,14 @@ Vulnerabilities and Countermeasures
     absolutely required
 
 * The application does not validate user input used for redirects (A10)
+
   * Don't allow user input to be used directly in a redirect - redirect based on
     a mapping of options to acceptable targets
   * If user input must be used for a redirect, validate using a URL parsing
     library against a whitelist of acceptable URLs
 
 * An attacker can exhaust resources of an application
+
   * Ensure that rate limiting is implemented to a reasonable level
   * Use performant cryptography and hashing methods that are still
     cryptographically secure
@@ -205,6 +221,7 @@ Vulnerabilities and Countermeasures
     consider using the built in hardware RNG or haveged_
 
 * An attacker can learn information from poorly designed or written cryptography
+
   * **DON'T WRITE YOUR OWN ENCRYPTION OR SECURE HASHING ALGORITHM**
   * There is almost never a reason to design encryption or hashing algorithms
   * If secure encryption or hashing libraries don't exist for the language,
