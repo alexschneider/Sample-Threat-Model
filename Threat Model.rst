@@ -238,9 +238,6 @@ Vulnerabilities and Countermeasures
     controls and restrictions are in place to prevent arbitrary file reads
   * Don't construct language statements based on unverified user input
 
-
-
-
 .. _Content Security Policy (CSP): https://www.owasp.org/index.php/Content_Security_Policy
 .. _HSTS: https://www.owasp.org/index.php/HTTP_Strict_Transport_Security
 .. _Certificate Pinning: https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning
