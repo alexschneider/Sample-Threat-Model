@@ -231,6 +231,14 @@ Vulnerabilities and Countermeasures
   * Ensure items that need to be cryptographically secure use secure random
     number generators with sufficient entropy
 
+* An attacker can gain access to filesystem contents or run unauthorized code
+  (RCE)
+
+  * Ensure that if the application accesses filesystem contents, sufficient
+    controls and restrictions are in place to prevent arbitrary file reads
+  * Don't construct language statements based on unverified user input
+
+
 
 
 .. _Content Security Policy (CSP): https://www.owasp.org/index.php/Content_Security_Policy
