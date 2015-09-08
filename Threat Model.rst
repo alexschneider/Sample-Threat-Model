@@ -8,6 +8,10 @@ removing any personal info or canceling the monthly charge is impossible. In add
 address on record to bring in even more profit for the website. This results in a good deal of disgruntled users and it is
 likely some of them will hold a grudge against the site and try to attack it with varying degrees of effectiveness.
 
+The following diagram represents Pay to Post:
+
+.. image:: https://raw.githubusercontent.com/alexschneider/Sample-Threat-Model/master/Threat%20Modeling.png
+
 Assets
 ------
 
